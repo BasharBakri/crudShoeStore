@@ -1,7 +1,16 @@
-import { useNavigate, Form } from "react-router-dom";
+import { useNavigate, Form, useNavigation } from "react-router-dom";
 export default function AddShoe() {
 
+  const navigation = useNavigation();
   const navigate = useNavigate();
+
+  const isSubmitting = navigation.state === 'submitting';
+
+
+
+
+
+
   function cancelHandler() {
     navigate(`/a/allshoes/`);
   }
@@ -24,10 +33,10 @@ export default function AddShoe() {
         <textarea id="description" name="description" rows="5" required />
       </p>
       <div className="shoeAction" >
-        <button type="button" onClick={cancelHandler}>
-          Cancel
+        <button type="button" onClick={cancelHandler} disabled={isSubmitting} >
+          {isSubmitting ? 'Please Wait' : 'Cancel'}
         </button>
-        <button>Save</button>
+        <button disabled={isSubmitting}>{isSubmitting ? 'Submitting...' : 'Save'}</button>
       </div>
     </Form>
   )
