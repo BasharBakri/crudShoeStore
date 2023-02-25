@@ -11,6 +11,7 @@ import { getAllShoes } from './api';
 import { getSingleShoe } from './apiEach';
 import AllShoesRoot from './AllShoesRoot';
 import { sendShoe } from './apiAdd';
+import { deleteShoe } from './apiDelete';
 
 const router = createBrowserRouter([
   {
@@ -39,7 +40,8 @@ const router = createBrowserRouter([
           {
             path: '/a/allshoes/:shoeId',
             element: <ShoeDetail />,
-            loader: getSingleShoe
+            loader: getSingleShoe,
+            action: deleteShoe
           },
           {
             path: '/a/allshoes/:shoeId/edit',
