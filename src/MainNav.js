@@ -7,7 +7,7 @@ export default function MainNav() {
   return (<>
     <header className="headerNavBar">
       <nav>
-        <ul className="listNavBar">
+        <ul className="mainNavBar">
           <li>
             <Link to='/'>Home</Link>
           </li>

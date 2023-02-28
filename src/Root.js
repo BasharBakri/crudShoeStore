@@ -7,7 +7,7 @@ export default function Root() {
 
   return (<>
     <MainNav />
-    {navigation.state === 'loading' && <p>Loading...</p>}
+    {navigation.state === 'loading' && <div className="lds-dual-ring"></div>}
     {(navigation.state === 'idle' || navigation.state === 'submitting') && <Outlet />}
 
   </>)

@@ -33,7 +33,7 @@ export default function EditShoe() {
         <label htmlFor="description">Description: </label>
         <textarea id="description" name="description" rows="5" required defaultValue={data.description} />
       </p>
-      <div className="shoeAction" >
+      <div className="shoeAction">
         <button type="button" onClick={cancelHandler} disabled={isSubmitting} >
           {isSubmitting ? 'Please Wait' : 'Cancel'}
         </button>

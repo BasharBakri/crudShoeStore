@@ -11,13 +11,13 @@ export default function AllShoes() {
   console.log(data);
   const ShowShoes = data.map((shoe) => {
     return (
-      <div className="shoeCard" key={shoe.id}>
+      <Link to={`/a/allshoes/${shoe.id}`} className="shoeCard" key={shoe.id}>
         <img src={shoe.avatar} alt={shoe.title}>
         </img>
         <h3>{shoe.title}</h3>
-        <p>{shoe.price}</p>
-        <Link to={`/a/allshoes/${shoe.id}`}>Edit/Delete</Link>
-      </div>
+        <p>&#8362; {shoe.price}</p>
+        <p className="cardDescription" >{shoe.description}</p>
+      </Link>
     )
   })
 
