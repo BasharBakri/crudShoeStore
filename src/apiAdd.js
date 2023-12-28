@@ -8,9 +8,9 @@ export const sendShoe = async ({ request, params }) => {
     price: sendData.get('price'),
     avatar: sendData.get('avatar'),
     description: sendData.get('description')
-  }
+  };
   console.log(sentShoeData);
-  const response = await fetch(`https://63f9f2ca473885d837d55e59.mockapi.io/api/Shoes/`, {
+  const response = await fetch(`https://658dac0d7c48dce947399400.mockapi.io/Shoes`, {
     method: 'POST',
     headers: { 'content-type': 'application/json' },
     body: JSON.stringify(sentShoeData)
@@ -19,6 +19,6 @@ export const sendShoe = async ({ request, params }) => {
   if (response.ok) {
     return redirect('/a/allshoes');
   } else {
-    throw json({ message: 'Could not send Item' }, { status: 400 })
+    throw json({ message: 'Could not send Item' }, { status: 400 });
   }
 };

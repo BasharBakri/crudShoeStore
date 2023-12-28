@@ -2,9 +2,9 @@ import { json } from "react-router-dom";
 
 console.log('check apiEach');
 export const getSingleShoe = async (data) => {
-  const id = data.params.shoeId
+  const id = data.params.shoeId;
 
-  const response = await fetch(`https://63f9f2ca473885d837d55e59.mockapi.io/api/Shoes/${id}`, {
+  const response = await fetch(`https://658dac0d7c48dce947399400.mockapi.io/Shoes/${id}`, {
     method: 'GET',
     headers: { 'content-type': 'application/json' },
   });
@@ -13,6 +13,6 @@ export const getSingleShoe = async (data) => {
     const resData = await response.json();
     return resData;
   } else {
-    throw json({ message: 'Could not fetch item' }, { status: 500 })
+    throw json({ message: 'Could not fetch item' }, { status: 500 });
   }
 };
